@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import BrandMark from '../components/BrandMark.astro'
+---
+<BaseLayout title="Iniciar sesión | Hotel Gran Capital">
+  <main class="grid min-h-screen place-items-center bg-[#f3f6fc] px-4 py-8">
+    <section class="w-full max-w-[430px]">
+      <div class="mb-6 flex justify-center"><BrandMark /></div>
+      <div class="soft-card p-7 sm:p-9">
+        <div class="text-center"><span class="eyebrow">Portal de huéspedes</span><h1 class="mt-3 text-2xl font-black text-[#17243b]">Bienvenido de vuelta</h1><p class="mt-2 text-sm text-[#78849a]">Accede a tus reservas y descubre tu próxima estancia.</p></div>
+        <div class="mt-7 grid grid-cols-2 rounded-lg bg-[#eaf0fb] p-1 text-center text-xs font-black"><span class="rounded-md bg-white px-3 py-2 text-[#263651] shadow-sm">Iniciar sesión</span><a href="/register" class="px-3 py-2 text-[#6d7890]">Registro de huésped</a></div>
+        <form id="login-form" class="mt-7 space-y-5" novalidate>
+          <div><label class="field-label" for="usuario">Usuario</label><input class="field" id="usuario" name="usuario" autocomplete="username" placeholder="Tu usuario" /></div>
+          <div><div class="flex justify-between"><label class="field-label" for="contrasena">Contraseña</label><span class="text-[10px] text-[#a26922]">Acceso seguro</span></div><input class="field" id="contrasena" name="contrasena" type="password" autocomplete="current-password" placeholder="••••••••" /></div>
+          <p id="form-error" class="hidden rounded-lg bg-[#fff0ef] p-3 text-xs font-bold text-[#b54545]"></p>
+          <button class="btn-primary w-full" type="submit">Ingresar al portal →</button>
+        </form>
+        <div class="mt-6 rounded-lg bg-[#eef4ff] p-4 text-xs leading-5 text-[#67748a]"><strong class="block text-[#263651]">Sesión protegida</strong>Tu credencial se valida de forma segura y el acceso se mantiene únicamente en este navegador.</div>
+      </div>
+      <p class="mt-5 text-center text-xs text-[#7b879b]">¿Aún no tienes cuenta? <a class="font-black text-[#a26922]" href="/register">Regístrate aquí</a></p>
+    </section>
+  </main>
+  <script src="../scripts/login.ts"></script>
+</BaseLayout>

@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import BrandMark from '../components/BrandMark.astro'
+---
+<BaseLayout title="Hotel Gran Capital | Estancias con carácter">
+  <div class="page-shell min-h-screen">
+    <header class="border-b border-[#e4e9f3] bg-white/80">
+      <div class="container-wide flex min-h-[72px] items-center justify-between gap-5 py-3">
+        <BrandMark />
+        <nav class="hidden items-center gap-5 text-xs font-bold text-[#59677d] md:flex">
+          <a href="#habitaciones" class="hover:text-[#a26922]">Habitaciones</a>
+          <a href="#experiencia" class="hover:text-[#a26922]">La experiencia</a>
+        </nav>
+        <div class="flex gap-2">
+          <a class="btn-secondary" href="/login">Iniciar sesión</a>
+          <a class="btn-primary hidden sm:inline-flex" href="/register">Crear cuenta</a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="container-wide grid items-center gap-10 py-14 lg:grid-cols-[1.05fr_.95fr] lg:py-20">
+        <div>
+          <p class="eyebrow">Hospitalidad que permanece</p>
+          <h1 class="mt-4 max-w-2xl text-5xl font-black leading-[.98] tracking-[-.06em] text-[#17243b] md:text-7xl">Tu próximo descanso empieza aquí.</h1>
+          <p class="mt-6 max-w-xl text-base leading-7 text-[#68758a]">Descubre habitaciones pensadas para bajar el ritmo, reservar con claridad y disfrutar la estadía sin fricciones.</p>
+          <div class="mt-8 flex flex-wrap gap-3"><a class="btn-primary" href="/rooms">Explorar habitaciones →</a><a class="btn-secondary" href="/register">Registrarme</a></div>
+          <div class="mt-10 flex flex-wrap gap-7 text-xs text-[#66748b]"><span><strong class="block text-lg text-[#182640]">10</strong>habitaciones</span><span><strong class="block text-lg text-[#182640]">24/7</strong>recepción</span><span><strong class="block text-lg text-[#182640]">100%</strong>personalizado</span></div>
+        </div>
+        <div class="soft-card relative overflow-hidden p-3">
+          <div class="room-visual min-h-[370px] rounded-2xl md:min-h-[440px]" style="background:linear-gradient(145deg,#d7e1e7 0%,#90a9b3 32%,#3c5965 74%,#1c3445 100%);">
+            <div class="absolute inset-x-7 bottom-7 rounded-xl border border-white/40 bg-white/15 p-4 text-white backdrop-blur-md"><p class="text-[10px] font-black uppercase tracking-[.18em] text-[#ffe0a0]">Hotel Gran Capital</p><p class="mt-1 text-xl font-black">Un espacio para volver a ti.</p></div>
+          </div>
+        </div>
+      </section>
+      <section id="experiencia" class="border-y border-[#e6ebf4] bg-white/60 py-8">
+        <div class="container-wide grid gap-4 md:grid-cols-3"><div class="soft-card p-5"><span class="text-xl">◈</span><h2 class="mt-3 font-black">Reserva sin vueltas</h2><p class="mt-2 text-sm leading-6 text-[#77839a]">Consulta disponibilidad real y confirma en pocos pasos.</p></div><div class="soft-card p-5"><span class="text-xl">✦</span><h2 class="mt-3 font-black">Estancias con intención</h2><p class="mt-2 text-sm leading-6 text-[#77839a]">Elige las comodidades que hacen tu estadía más tuya.</p></div><div class="soft-card p-5"><span class="text-xl">✓</span><h2 class="mt-3 font-black">Todo bajo control</h2><p class="mt-2 text-sm leading-6 text-[#77839a]">Gestiona tus reservas desde un portal simple y seguro.</p></div></div>
+      </section>
+      <section id="habitaciones" class="container-wide py-14"><div class="flex items-end justify-between gap-4"><div><p class="eyebrow">Una habitación para cada ritmo</p><h2 class="mt-2 text-3xl font-black tracking-tight text-[#17243b]">Explora nuestras habitaciones</h2></div><a class="hidden text-xs font-black text-[#a26922] sm:block" href="/rooms">Ver todas →</a></div><div id="home-rooms" class="mt-7 grid gap-5 md:grid-cols-2 lg:grid-cols-3"><p class="text-sm text-[#7b879b]">Cargando habitaciones...</p></div></section>
+    </main>
+    <footer class="border-t border-[#e4e9f3] py-6"><div class="container-wide flex flex-wrap justify-between gap-3 text-xs text-[#7b879b]"><span>© Hotel Gran Capital</span><span>Hospitalidad con carácter.</span></div></footer>
+  </div>
+  <script src="../scripts/home.ts"></script>
+</BaseLayout>

@@ -1,0 +1,10 @@
+---
+import AppLayout from '../layouts/AppLayout.astro'
+---
+<AppLayout title="Panel principal | Hotel Gran Capital">
+  <section class="flex flex-wrap items-end justify-between gap-4"><div><p class="eyebrow">Panel de recepción personal</p><h1 class="mt-2 text-3xl font-black tracking-tight text-[#17243b]">Tu estancia, en orden.</h1><p id="welcome-copy" class="mt-2 text-sm text-[#718097]">Consulta tus habitaciones y reservas desde un solo lugar.</p></div><a class="btn-primary" href="/reservations/new">Nueva reserva →</a></section>
+  <section id="dashboard-stats" class="mt-8 grid gap-4 sm:grid-cols-3"><div class="soft-card p-5"><p class="eyebrow">Habitaciones</p><strong class="mt-2 block text-3xl font-black">—</strong><span class="text-xs text-[#79859a]">disponibles ahora</span></div><div class="soft-card p-5"><p class="eyebrow">Reservas activas</p><strong class="mt-2 block text-3xl font-black">—</strong><span class="text-xs text-[#79859a]">en tu historial</span></div><div class="soft-card p-5"><p class="eyebrow">Perfil</p><strong class="mt-2 block text-xl font-black">—</strong><span class="text-xs text-[#79859a]">nivel de acceso</span></div></section>
+  <section class="mt-10 flex items-end justify-between"><div><p class="eyebrow">Selección del hotel</p><h2 class="mt-2 text-2xl font-black text-[#17243b]">Habitaciones disponibles</h2></div><a class="text-xs font-black text-[#a26922]" href="/rooms">Ver listado completo →</a></section><div id="dashboard-rooms" class="mt-5 grid gap-5 md:grid-cols-2 lg:grid-cols-3"><p class="text-sm text-[#7b879b]">Cargando...</p></div>
+  <section class="mt-10 flex items-end justify-between"><div><p class="eyebrow">Tu actividad</p><h2 class="mt-2 text-2xl font-black text-[#17243b]">Reservas recientes</h2></div><a class="text-xs font-black text-[#a26922]" href="/reservations/history">Ver historial →</a></section><div id="dashboard-reservations" class="soft-card mt-5 overflow-hidden"><p class="p-6 text-sm text-[#7b879b]">Cargando reservas...</p></div>
+  <script src="../scripts/dashboard.ts"></script>
+</AppLayout>

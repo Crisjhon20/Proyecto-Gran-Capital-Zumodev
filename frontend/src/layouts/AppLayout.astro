@@ -1,0 +1,45 @@
+---
+import BaseLayout from './BaseLayout.astro'
+import BrandMark from '../components/BrandMark.astro'
+const { title = 'Panel | Hotel Gran Capital' } = Astro.props
+---
+<BaseLayout title={title}>
+  <div class="page-shell" data-protected="true">
+    <header class="border-b border-[#e4e9f3] bg-white/85">
+      <div class="container-wide flex min-h-[72px] items-center justify-between gap-5 py-3">
+        <BrandMark compact />
+        <nav class="hidden items-center gap-1 rounded-xl bg-[#f4f7fc] p-1 md:flex" aria-label="Navegación principal">
+          <a class="nav-link rounded-lg px-4 py-2 text-xs font-bold text-[#52617a]" href="/rooms">Explorar habitaciones</a>
+          <a class="nav-link rounded-lg px-4 py-2 text-xs font-bold text-[#52617a]" href="/reservations/history">Mis reservas</a>
+          <a class="nav-link rounded-lg px-4 py-2 text-xs font-bold text-[#52617a]" href="/dashboard">Panel</a>
+          <a id="admin-rooms-link" class="nav-link hidden rounded-lg px-4 py-2 text-xs font-bold text-[#a26922]" href="/rooms/edit">Administrar</a>
+        </nav>
+        <div class="flex items-center gap-3">
+          <span id="session-profile" class="hidden rounded-lg bg-[#fff7e9] px-3 py-2 text-[10px] font-black uppercase tracking-wider text-[#a26922] sm:inline-block">Sesión activa</span>
+          <span id="session-user" class="hidden text-right text-xs font-black text-[#25344e] sm:block"></span>
+          <button id="logout-button" class="rounded-lg border border-[#f0d9bb] bg-[#fffaf3] px-3 py-2 text-[10px] font-black uppercase tracking-wider text-[#a26922]">Cerrar sesión</button>
+        </div>
+      </div>
+    </header>
+    <main class="container-wide py-8 lg:py-10"><slot /></main>
+  </div>
+  <script>
+    import { getSession } from '../auth/session'
+    import { logout } from '../services/auth-service'
+    const session = getSession()
+    if (!session) window.location.assign('/login')
+    else {
+      const user = document.querySelector('#session-user')
+      const profile = document.querySelector('#session-profile')
+      if (user) user.textContent = session.usuario
+      if (profile) profile.textContent = session.perfil
+      if (session.perfil === 'administrador') document.querySelector('#admin-rooms-link')?.classList.remove('hidden')
+    }
+    document.querySelector('#logout-button')?.addEventListener('click', async () => {
+      const button = document.querySelector<HTMLButtonElement>('#logout-button')
+      if (button) button.disabled = true
+      await logout()
+      window.location.assign('/login')
+    })
+  </script>
+</BaseLayout>

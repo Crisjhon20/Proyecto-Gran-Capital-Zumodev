@@ -1,0 +1,9 @@
+---
+import AppLayout from '../layouts/AppLayout.astro'
+---
+<AppLayout title="Habitaciones | Hotel Gran Capital">
+  <section class="flex flex-wrap items-end justify-between gap-4"><div><p class="eyebrow">Explorar Gran Capital</p><h1 class="mt-2 text-3xl font-black tracking-tight text-[#17243b]">Habitaciones pensadas para ti</h1><p class="mt-2 text-sm text-[#718097]">Filtra por comodidad, presupuesto y disponibilidad.</p></div><a class="btn-primary" href="/reservations/new">Reservar ahora →</a></section>
+  <form id="room-filters" class="soft-card mt-8 grid gap-3 p-4 sm:grid-cols-2 lg:grid-cols-5"><select class="field" name="cama"><option value="">Tipo de cama</option><option value="individual">Individual</option><option value="doble">Doble</option><option value="matrimonial">Matrimonial</option><option value="king">King</option></select><input class="field" name="precioMin" type="number" min="1" placeholder="Precio mínimo" /><input class="field" name="precioMax" type="number" min="1" placeholder="Precio máximo" /><select class="field" name="disponibilidad"><option value="">Disponibilidad</option><option value="disponible">Disponible</option><option value="no disponible">No disponible</option></select><button class="btn-primary" type="submit">Aplicar filtros</button></form>
+  <div id="rooms-feedback" class="mt-5 hidden rounded-lg p-3 text-sm"></div><div id="rooms-grid" class="mt-5 grid gap-5 md:grid-cols-2 lg:grid-cols-3"><p class="text-sm text-[#7b879b]">Cargando habitaciones...</p></div>
+  <script src="../scripts/rooms.ts"></script>
+</AppLayout>

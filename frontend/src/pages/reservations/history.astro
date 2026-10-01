@@ -1,0 +1,7 @@
+---
+import AppLayout from '../../layouts/AppLayout.astro'
+---
+<AppLayout title="Mis reservas | Hotel Gran Capital">
+  <section class="flex flex-wrap items-end justify-between gap-4"><div><p class="eyebrow">Folio de huésped personal</p><h1 class="mt-2 text-3xl font-black tracking-tight text-[#17243b]">Historial de reservas</h1><p class="mt-2 text-sm text-[#718097]">Consulta, actualiza o cancela tus estancias con claridad.</p></div><a class="btn-primary" href="/reservations/new">Nueva reserva →</a></section><div id="history-summary" class="mt-7 grid gap-3 sm:grid-cols-3"></div><div id="history-list" class="mt-6 space-y-4"><p class="text-sm text-[#7b879b]">Cargando historial...</p></div>
+  <script src="../../scripts/history.ts"></script>
+</AppLayout>

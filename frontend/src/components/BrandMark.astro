@@ -1,0 +1,10 @@
+---
+const compact = Astro.props.compact ?? false
+---
+<a href="/" class={`flex items-center gap-3 ${compact ? 'text-sm' : ''}`} aria-label="Hotel Gran Capital">
+  <span class="grid h-9 w-9 place-items-center rounded-lg bg-[#111827] text-sm font-black text-[#f6c66d] shadow-sm">✦</span>
+  <span class="leading-tight">
+    <strong class="block text-[13px] font-black tracking-[.12em] text-[#17243b]">GRAN CAPITAL</strong>
+    <small class="block text-[8px] font-bold tracking-[.2em] text-[#a26922]">HOTEL & RESIDENCE</small>
+  </span>
+</a>

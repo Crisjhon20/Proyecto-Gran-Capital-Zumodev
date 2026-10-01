@@ -1,0 +1,7 @@
+---
+import AppLayout from '../../layouts/AppLayout.astro'
+---
+<AppLayout title="Editar reserva | Hotel Gran Capital">
+  <section class="mx-auto max-w-3xl"><a class="text-xs font-black text-[#a26922]" href="/reservations/history">← Volver al historial</a><div class="mt-5"><p class="eyebrow">Ajusta tu estancia</p><h1 class="mt-2 text-3xl font-black text-[#17243b]">Editar reserva</h1><p class="mt-2 text-sm text-[#718097]">Solo puedes modificar reservas confirmadas.</p></div><form id="edit-reservation-form" class="soft-card mt-8 grid gap-5 p-6 sm:grid-cols-2" novalidate><div class="sm:col-span-2"><label class="field-label" for="habitacionId">Habitación</label><select class="field" id="habitacionId" name="habitacionId"></select></div><div><label class="field-label" for="fechaEntrada">Fecha de entrada</label><input class="field" id="fechaEntrada" name="fechaEntrada" type="date" /></div><div><label class="field-label" for="fechaSalida">Fecha de salida</label><input class="field" id="fechaSalida" name="fechaSalida" type="date" /></div><div class="sm:col-span-2"><p id="form-error" class="hidden rounded-lg bg-[#fff0ef] p-3 text-xs font-bold text-[#b54545]"></p><p id="form-success" class="hidden rounded-lg bg-[#e8f8f1] p-3 text-xs font-bold text-[#168660]"></p></div><div class="flex justify-end gap-3 sm:col-span-2"><a class="btn-secondary" href="/reservations/history">Cancelar</a><button class="btn-primary" type="submit">Guardar cambios →</button></div></form></section>
+  <script src="../../scripts/edit-reservation.ts"></script>
+</AppLayout>

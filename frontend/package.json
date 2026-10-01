@@ -1,0 +1,21 @@
+{
+  "name": "grancapital-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "check": "astro check",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/compiler": "2.12.2",
+    "@astrojs/tailwind": "^6.0.2",
+    "astro": "5.14.1",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.8.3",
+    "zod": "^3.25.76"
+  }
+}
