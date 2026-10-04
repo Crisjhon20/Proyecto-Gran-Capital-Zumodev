@@ -1,7 +1,16 @@
 import { clearSession, getSession } from '../auth/session'
 import type { ApiError } from '../types/api'
 
-const API_URL = (import.meta.env.PUBLIC_API_URL || 'http://localhost:3000').replace(/\/$/, '')
+const configuredApiUrl = import.meta.env.PUBLIC_API_URL?.trim()
+const API_URL = (configuredApiUrl || 'http://localhost:3000').replace(/\/$/, '')
+
+function assertProductionApiUrl() {
+  if (typeof window === 'undefined') return
+  const localBrowser = /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname)
+  if (!localBrowser && (!configuredApiUrl || /localhost|127\.0\.0\.1/.test(API_URL))) {
+    throw new Error('PUBLIC_API_URL debe apuntar a la URL publica del backend en produccion')
+  }
+}
 
 export class ApiRequestError extends Error {
   constructor(public readonly status: number, public readonly payload: ApiError) {
@@ -10,6 +19,7 @@ export class ApiRequestError extends Error {
 }
 
 export async function apiRequest<T>(path: string, options: RequestInit = {}): Promise<T> {
+  assertProductionApiUrl()
   const session = getSession()
   const headers = new Headers(options.headers)
   headers.set('Accept', 'application/json')
