@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Habitacion Gran Capital con vista urbana</title>
+  <desc id="desc">Ilustracion calida de una habitacion premium con cama y vista a la ciudad.</desc>
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e8d4c3"/><stop offset="1" stop-color="#b98368"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#9b6a52"/><stop offset="1" stop-color="#4e3029"/></linearGradient>
+    <linearGradient id="window" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#40586c"/><stop offset="1" stop-color="#172b3a"/></linearGradient>
+    <linearGradient id="linen" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff8ed"/><stop offset="1" stop-color="#d8c6b3"/></linearGradient>
+    <filter id="shadow"><feGaussianBlur stdDeviation="18"/></filter>
+  </defs>
+  <rect width="1200" height="760" fill="url(#wall)"/>
+  <rect y="555" width="1200" height="205" fill="url(#floor)"/>
+  <rect x="735" y="76" width="350" height="405" rx="4" fill="#3e2927"/>
+  <rect x="754" y="94" width="312" height="369" fill="url(#window)"/>
+  <path d="M754 355h312v108H754z" fill="#263b4c"/>
+  <path d="M775 420l42-128 32 128zm62 0 50-190 39 190zm89 0 39-152 44 152zm70 0 57-104 30 104z" fill="#142735"/>
+  <path d="M910 94v369M754 275h312" stroke="#6b4c42" stroke-width="10"/>
+  <rect x="88" y="94" width="300" height="15" fill="#6b4035"/><rect x="110" y="108" width="16" height="355" fill="#5b3b35"/>
+  <rect x="142" y="125" width="210" height="125" rx="5" fill="#d8cab8"/><path d="M148 132h198v112H148z" fill="#e9dfcf"/><path d="M173 204l60-61 77 74" fill="none" stroke="#b99f8d" stroke-width="8"/>
+  <ellipse cx="440" cy="620" rx="330" ry="55" fill="#2e1b1b" opacity=".45" filter="url(#shadow)"/>
+  <rect x="230" y="380" width="520" height="230" rx="18" fill="#4d2e2a"/>
+  <rect x="260" y="330" width="460" height="215" rx="28" fill="#6e4238"/>
+  <rect x="282" y="353" width="415" height="177" rx="24" fill="url(#linen)"/>
+  <path d="M480 360c35 65 22 130 3 170h215V360z" fill="#ad755d" opacity=".82"/>
+  <rect x="310" y="355" width="120" height="78" rx="12" fill="#fffaf0"/><rect x="445" y="355" width="120" height="78" rx="12" fill="#f2e7d8"/>
+  <rect x="145" y="485" width="80" height="112" rx="7" fill="#92705a"/><rect x="159" y="474" width="53" height="15" rx="7" fill="#d8b383"/><circle cx="186" cy="466" r="15" fill="#f5dfae"/>
+  <rect x="760" y="500" width="185" height="92" rx="9" fill="#634238"/><rect x="785" y="472" width="135" height="30" fill="#795246"/><circle cx="850" cy="452" r="25" fill="#d8ab70"/>
+  <rect x="980" y="425" width="118" height="170" rx="5" fill="#4a302d"/><rect x="998" y="445" width="82" height="70" fill="#1b2730"/>
+  <path d="M0 555h1200" stroke="#c59470" stroke-width="10" opacity=".35"/>
+</svg>

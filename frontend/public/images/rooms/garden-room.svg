@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Habitacion Gran Capital con vista al jardin</title>
+  <desc id="desc">Ilustracion calida de una habitacion luminosa con jardin tropical.</desc>
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f1e5d2"/><stop offset="1" stop-color="#d5b69a"/></linearGradient>
+    <linearGradient id="garden" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#9bc28b"/><stop offset="1" stop-color="#31624a"/></linearGradient>
+    <linearGradient id="wood" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9a6546"/><stop offset="1" stop-color="#58372e"/></linearGradient>
+    <linearGradient id="linen" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff8e9"/><stop offset="1" stop-color="#d8bca0"/></linearGradient>
+  </defs>
+  <rect width="1200" height="760" fill="url(#wall)"/><rect y="565" width="1200" height="195" fill="url(#wood)"/>
+  <rect x="640" y="60" width="410" height="435" rx="5" fill="#3d302b"/><rect x="660" y="80" width="370" height="395" fill="url(#garden)"/>
+  <circle cx="720" cy="185" r="120" fill="#b6d58f" opacity=".8"/><circle cx="930" cy="150" r="135" fill="#6a9a67" opacity=".8"/>
+  <path d="M675 470c55-130 110-175 150-235 30 75 89 120 180 235z" fill="#315b45"/><path d="M840 470c-12-125 20-226 82-315M890 470c30-98 74-155 116-198" stroke="#8bb77d" stroke-width="13"/>
+  <path d="M660 280h370M845 80v395" stroke="#665044" stroke-width="9"/>
+  <rect x="86" y="105" width="220" height="130" rx="6" fill="#f3e9d8" stroke="#8e6d55" stroke-width="10"/><path d="M112 205l72-76 84 84" fill="none" stroke="#b28666" stroke-width="10"/>
+  <ellipse cx="430" cy="625" rx="340" ry="50" fill="#3c2b26" opacity=".35"/>
+  <rect x="220" y="382" width="510" height="225" rx="17" fill="#614136"/><rect x="250" y="332" width="450" height="210" rx="26" fill="#96705b"/>
+  <rect x="275" y="354" width="405" height="175" rx="24" fill="url(#linen)"/><path d="M470 360h210v169H490c-22-60-22-111-20-169z" fill="#aa684c" opacity=".72"/>
+  <rect x="300" y="355" width="120" height="76" rx="12" fill="#fffaf0"/><rect x="435" y="355" width="120" height="76" rx="12" fill="#f2e6d3"/>
+  <rect x="133" y="484" width="76" height="112" rx="8" fill="#8b654c"/><circle cx="171" cy="466" r="22" fill="#f7deb1"/><path d="M171 462v-65" stroke="#6c4e3d" stroke-width="7"/>
+  <rect x="780" y="490" width="140" height="80" rx="34" fill="#8d5e46"/><rect x="820" y="555" width="16" height="70" fill="#52372d"/><rect x="878" y="555" width="16" height="70" fill="#52372d"/>
+  <circle cx="850" cy="530" r="22" fill="#c59a68"/><rect x="824" y="525" width="55" height="10" rx="5" fill="#6e4436"/>
+  <rect x="1000" y="420" width="125" height="175" fill="#6b4939"/><rect x="1020" y="442" width="84" height="70" fill="#263c35"/>
+  <path d="M0 565h1200" stroke="#d4a67f" stroke-width="10" opacity=".35"/>
+</svg>

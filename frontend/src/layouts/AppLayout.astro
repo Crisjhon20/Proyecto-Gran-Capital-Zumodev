@@ -5,23 +5,46 @@ const { title = 'Panel | Hotel Gran Capital' } = Astro.props
 ---
 <BaseLayout title={title}>
   <div class="page-shell" data-protected="true">
-    <header class="border-b border-[#e4e9f3] bg-white/85">
-      <div class="container-wide flex min-h-[72px] items-center justify-between gap-5 py-3">
-        <BrandMark compact />
-        <nav class="hidden items-center gap-1 rounded-xl bg-[#f4f7fc] p-1 md:flex" aria-label="Navegación principal">
-          <a class="nav-link rounded-lg px-4 py-2 text-xs font-bold text-[#52617a]" href="/rooms">Explorar habitaciones</a>
-          <a class="nav-link rounded-lg px-4 py-2 text-xs font-bold text-[#52617a]" href="/reservations/history">Mis reservas</a>
-          <a class="nav-link rounded-lg px-4 py-2 text-xs font-bold text-[#52617a]" href="/dashboard">Panel</a>
-          <a id="admin-rooms-link" class="nav-link hidden rounded-lg px-4 py-2 text-xs font-bold text-[#a26922]" href="/rooms/edit">Administrar</a>
-        </nav>
-        <div class="flex items-center gap-3">
-          <span id="session-profile" class="hidden rounded-lg bg-[#fff7e9] px-3 py-2 text-[10px] font-black uppercase tracking-wider text-[#a26922] sm:inline-block">Sesión activa</span>
-          <span id="session-user" class="hidden text-right text-xs font-black text-[#25344e] sm:block"></span>
-          <button id="logout-button" class="rounded-lg border border-[#f0d9bb] bg-[#fffaf3] px-3 py-2 text-[10px] font-black uppercase tracking-wider text-[#a26922]">Cerrar sesión</button>
+    <div class="flex min-h-screen">
+      <aside class="sidebar-shell hidden w-[238px] shrink-0 p-5 lg:block">
+        <div class="sticky top-5 flex min-h-[calc(100vh-40px)] flex-col">
+          <BrandMark compact />
+          <p class="mt-12 px-3 text-[10px] font-black uppercase tracking-[.16em] text-[#a17d6e]">Operativa principal</p>
+          <nav class="mt-3 space-y-1" aria-label="Navegación principal">
+            <a class="sidebar-link" href="/dashboard"><span class="sidebar-link-icon">⌂</span>Panel principal</a>
+            <a class="sidebar-link" href="/rooms"><span class="sidebar-link-icon">▤</span>Habitaciones</a>
+            <a class="sidebar-link" href="/reservations/history"><span class="sidebar-link-icon">▥</span>Mis reservas</a>
+            <a id="admin-rooms-link" class="sidebar-link hidden" href="/rooms/edit"><span class="sidebar-link-icon">⚙</span>Administrar habitaciones</a>
+          </nav>
+          <div class="mt-auto rounded-xl border border-[#eadbd2] bg-[#fff8f4] p-4">
+            <p class="text-[10px] font-black uppercase tracking-wider text-[#9b7667]">Gran Capital</p>
+            <p class="mt-2 text-xs leading-5 text-[#80695e]">Gestiona tus estancias desde un solo lugar.</p>
+          </div>
         </div>
+      </aside>
+      <div class="min-w-0 flex-1">
+        <header class="topbar sticky top-0 z-20">
+          <div class="flex min-h-[72px] items-center justify-between gap-4 px-4 py-3 sm:px-8">
+            <div>
+              <p class="hidden text-[10px] font-black uppercase tracking-[.16em] text-[#a17d6e] sm:block">Consola Gran Capital</p>
+              <p class="text-sm font-bold text-[#7b5345]">Gestión de estancias</p>
+            </div>
+            <div class="flex items-center gap-2 sm:gap-3">
+              <span id="session-profile" class="hidden rounded-lg bg-[#f4e3d8] px-3 py-2 text-[10px] font-black uppercase tracking-wider text-[#98401f] sm:inline-block">Sesión activa</span>
+              <span id="session-user" class="hidden text-right text-xs font-black text-[#54382f] sm:block"></span>
+              <button id="logout-button" class="rounded-lg border border-[#e8d5ca] bg-white px-3 py-2 text-[10px] font-black uppercase tracking-wider text-[#98401f]">Cerrar sesión</button>
+            </div>
+          </div>
+        </header>
+        <nav class="flex gap-1 overflow-x-auto border-b border-[#eddfd6] bg-[#fffaf7] px-4 py-2 lg:hidden" aria-label="Navegación móvil">
+          <a class="whitespace-nowrap rounded-lg px-3 py-2 text-xs font-bold text-[#755e54]" href="/dashboard">Panel</a>
+          <a class="whitespace-nowrap rounded-lg px-3 py-2 text-xs font-bold text-[#755e54]" href="/rooms">Habitaciones</a>
+          <a class="whitespace-nowrap rounded-lg px-3 py-2 text-xs font-bold text-[#755e54]" href="/reservations/history">Reservas</a>
+          <a id="mobile-admin-rooms-link" class="hidden whitespace-nowrap rounded-lg px-3 py-2 text-xs font-bold text-[#98401f]" href="/rooms/edit">Administrar</a>
+        </nav>
+        <main class="container-wide py-8 lg:py-10"><slot /></main>
       </div>
-    </header>
-    <main class="container-wide py-8 lg:py-10"><slot /></main>
+    </div>
   </div>
   <script>
     import { getSession } from '../auth/session'
@@ -33,7 +56,10 @@ const { title = 'Panel | Hotel Gran Capital' } = Astro.props
       const profile = document.querySelector('#session-profile')
       if (user) user.textContent = session.usuario
       if (profile) profile.textContent = session.perfil
-      if (session.perfil === 'administrador') document.querySelector('#admin-rooms-link')?.classList.remove('hidden')
+      if (session.perfil === 'administrador') {
+        document.querySelector('#admin-rooms-link')?.classList.remove('hidden')
+        document.querySelector('#mobile-admin-rooms-link')?.classList.remove('hidden')
+      }
     }
     document.querySelector('#logout-button')?.addEventListener('click', async () => {
       const button = document.querySelector<HTMLButtonElement>('#logout-button')
